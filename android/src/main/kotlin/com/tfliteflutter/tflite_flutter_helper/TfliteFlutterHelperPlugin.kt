@@ -42,7 +42,6 @@ const val METHOD_CHANNEL_NAME = "com.tfliteflutter.tflite_flutter_helper:methods
 /** TfliteFlutterHelperPlugin */
 class TfliteFlutterHelperPlugin : FlutterPlugin,
 		MethodCallHandler,
-		PluginRegistry.RequestPermissionsResultListener,
 		ActivityAware {
 
 
@@ -140,7 +139,7 @@ class TfliteFlutterHelperPlugin : FlutterPlugin,
 		}
 	}
 
-	override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray): Boolean {
+	override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray): Boolean {
 		when (requestCode) {
 			AUDIO_RECORD_PERMISSION_CODE -> {
 				permissionToRecordAudio = grantResults.isNotEmpty() &&
