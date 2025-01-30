@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:image/image.dart';
 import 'package:collection/collection.dart';
+import 'package:image/image.dart';
 import 'package:logger/logger.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
@@ -18,8 +18,8 @@ abstract class Classifier {
   late TensorImage _inputImage;
   late TensorBuffer _outputBuffer;
 
-  late TfLiteType _inputType;
-  late TfLiteType _outputType;
+  late TensorType _inputType;
+  late TensorType _outputType;
 
   final String _labelsFileName = 'assets/labels.txt';
 
